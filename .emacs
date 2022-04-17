@@ -105,7 +105,7 @@
   :config
   (setq which-key-idle-delay 1))
 
-
+;; TODO: Check if needed
 (setq exec-path (append exec-path '("~/.nvm/versions/node/v16.13.2/bin")))
 
 (custom-set-faces
