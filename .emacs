@@ -49,7 +49,7 @@
      "  " "%m  " mode-line-misc-info mode-line-end-spaces))
  '(org-src-block-faces 'nil)
  '(package-selected-packages
-   '(magit prettier-js modus-themes evil-collection evil sexy-monochrome-theme python-black smex ido-vertical-mode w3m company-arduino arduino-mode flycheck-grammarly org-inline-pdf org-preview-html flyspell-correct ivy-posframe which-key emacsql-mysql yaml-mode yaml multi-term ag yasnippet-snippets winum web-mode vterm use-package tide smart-tab slime rainbow-delimiters pug-mode prettier lsp-ui lsp-ivy js2-mode hl-todo highlight-numbers highlight-indentation highlight-indent-guides glsl-mode git-gutter+ fira-code-mode exwm exec-path-from-shell dotenv-mode desktop-environment counsel-projectile company column-enforce-mode color-identifiers-mode clang-format avy-zap)))
+   '(general magit prettier-js modus-themes evil-collection evil sexy-monochrome-theme python-black smex ido-vertical-mode w3m company-arduino arduino-mode flycheck-grammarly org-inline-pdf org-preview-html flyspell-correct ivy-posframe which-key emacsql-mysql yaml-mode yaml multi-term ag yasnippet-snippets winum web-mode vterm use-package tide smart-tab slime rainbow-delimiters pug-mode prettier lsp-ui lsp-ivy js2-mode hl-todo highlight-numbers highlight-indentation highlight-indent-guides glsl-mode git-gutter+ fira-code-mode exwm exec-path-from-shell dotenv-mode desktop-environment counsel-projectile company column-enforce-mode color-identifiers-mode clang-format avy-zap)))
 
 (use-package modus-themes
     :config
@@ -99,6 +99,11 @@
 (use-package company :ensure t)
 (use-package flycheck :ensure t)
 (use-package typescript-mode :ensure t)
+(use-package which-key
+  :init (which-key-mode)
+  :diminish which-key-mode
+  :config
+  (setq which-key-idle-delay 1))
 
 
 (setq exec-path (append exec-path '("~/.nvm/versions/node/v16.13.2/bin")))
