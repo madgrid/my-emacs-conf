@@ -49,7 +49,7 @@
      "  " "%m  " mode-line-misc-info mode-line-end-spaces))
  '(org-src-block-faces 'nil)
  '(package-selected-packages
-   '(general magit prettier-js modus-themes evil-collection evil sexy-monochrome-theme python-black smex ido-vertical-mode w3m company-arduino arduino-mode flycheck-grammarly org-inline-pdf org-preview-html flyspell-correct ivy-posframe which-key emacsql-mysql yaml-mode yaml multi-term ag yasnippet-snippets winum web-mode vterm use-package tide smart-tab slime rainbow-delimiters pug-mode prettier lsp-ui lsp-ivy js2-mode hl-todo highlight-numbers highlight-indentation highlight-indent-guides glsl-mode git-gutter+ fira-code-mode exwm exec-path-from-shell dotenv-mode desktop-environment counsel-projectile company column-enforce-mode color-identifiers-mode clang-format avy-zap)))
+   '(undo-tree restclient general magit prettier-js modus-themes evil-collection evil sexy-monochrome-theme python-black smex ido-vertical-mode w3m company-arduino arduino-mode flycheck-grammarly org-inline-pdf org-preview-html flyspell-correct ivy-posframe which-key emacsql-mysql yaml-mode yaml multi-term ag yasnippet-snippets winum web-mode vterm use-package tide smart-tab slime rainbow-delimiters pug-mode prettier lsp-ui lsp-ivy js2-mode hl-todo highlight-numbers highlight-indentation highlight-indent-guides glsl-mode git-gutter+ fira-code-mode exwm exec-path-from-shell dotenv-mode desktop-environment counsel-projectile company column-enforce-mode color-identifiers-mode clang-format avy-zap)))
 
 (use-package modus-themes
     :config
@@ -59,7 +59,10 @@
 ;;     :config
 ;;     (load-theme 'noctilux t))
 
-(set-frame-font "Monaco 16" nil t)
+;; (set-frame-font "Monaco 16" nil t)
+;; (set-frame-font "Victor Mono 15" nil t)
+;; (set-frame-font "Monego Nerd Font Fix 15" nil t)
+(set-frame-font "Comic Mono 17" nil t)
 
 
 (use-package js2-mode :ensure t)
@@ -104,6 +107,17 @@
   :diminish which-key-mode
   :config
   (setq which-key-idle-delay 1))
+(use-package restclient
+  :ensure t
+  :mode (("\\.http\\'" . restclient-mode)))
+(use-package undo-tree
+  :ensure t
+  :after evil
+  :diminish
+  :config
+  (evil-set-undo-system 'undo-tree)
+  (global-undo-tree-mode 1))
+
 
 ;; TODO: Check if needed
 (setq exec-path (append exec-path '("~/.nvm/versions/node/v16.13.2/bin")))
