@@ -13,7 +13,8 @@
 (evil-set-leader 'visual " ")
 
 (evil-define-key 'normal 'global (kbd "<leader>w") 'delete-whitespace-and-save)
-(evil-define-key 'normal 'global (kbd "<leader>G") 'counsel-ag)
+;; (evil-define-key 'normal 'global (kbd "<leader>G") 'counsel-ag)
+(evil-define-key 'normal 'global (kbd "<leader>G") 'counsel-git-grep)
 (evil-define-key 'normal 'global (kbd "<leader>g") 'magit-status)
 (evil-define-key 'normal 'global (kbd "<leader>s") 'swiper)
 (evil-define-key 'normal 'global (kbd "<leader>e") 'counsel-M-x)
@@ -26,8 +27,7 @@
 (evil-define-key 'normal 'global (kbd "<leader>o") 'other-window)
 (evil-define-key 'normal 'global (kbd "<leader>q") 'save-buffers-kill-terminal)
 (evil-define-key 'normal 'global (kbd "<leader>C") 'projectile-compile-project)
-(evil-define-key 'normal 'global (kbd "<leader>c") 'comment-region)
-(evil-define-key 'normal 'global (kbd "<leader>u") 'uncomment-region)
+(evil-define-key 'normal 'global (kbd "<leader>c") 'comment-or-uncomment-region)
 (evil-define-key 'normal 'global (kbd "<leader>r") 'projectile-run-project)
 (evil-define-key 'normal 'global (kbd "<leader>b") 'counsel-switch-buffer)
 (evil-define-key 'normal 'global (kbd "<leader>F") 'counsel-projectile-find-file)
@@ -38,6 +38,8 @@
 (evil-define-key 'normal 'global (kbd "<leader>k") 'previous-buffer)
 (evil-define-key 'normal 'global (kbd "<leader>n") 'next-error)
 (evil-define-key 'normal 'global (kbd "<leader>p") 'previous-error)
+(evil-define-key 'normal 'global (kbd "<leader>t") 'neotree-toggle)
+(evil-define-key 'normal 'global (kbd "<leader>T") 'neotree-dir)
 
 (evil-collection-init)
 

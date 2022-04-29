@@ -36,6 +36,9 @@
 (setq make-backup-files nil)
 (setq ring-bell-function nil)
 
+;; disable *.~undo-tree~" pollution
+(setq undo-tree-auto-save-history nil)
+
 ;; Hihglighting current line
 (global-hl-line-mode 1)
 (set-face-foreground 'hl-line nil)
@@ -112,9 +115,10 @@
 (flycheck-add-mode 'typescript-tslint 'web-mode)
 (flycheck-add-mode 'typescript-tslint 'typescript-mode)
 
-(setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-top-center)))
+;; NOTE: Sets the ivy thing on top of buffer
+;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-top-center)))
 
-(ivy-posframe-mode 1)
+;; (ivy-posframe-mode 1)
 
 (require 'gud)
 (define-key gud-minor-mode-map (kbd "<f5>") 'gud-run)

@@ -49,20 +49,20 @@
      "  " "%m  " mode-line-misc-info mode-line-end-spaces))
  '(org-src-block-faces 'nil)
  '(package-selected-packages
-   '(undo-tree restclient general magit prettier-js modus-themes evil-collection evil sexy-monochrome-theme python-black smex ido-vertical-mode w3m company-arduino arduino-mode flycheck-grammarly org-inline-pdf org-preview-html flyspell-correct ivy-posframe which-key emacsql-mysql yaml-mode yaml multi-term ag yasnippet-snippets winum web-mode vterm use-package tide smart-tab slime rainbow-delimiters pug-mode prettier lsp-ui lsp-ivy js2-mode hl-todo highlight-numbers highlight-indentation highlight-indent-guides glsl-mode git-gutter+ fira-code-mode exwm exec-path-from-shell dotenv-mode desktop-environment counsel-projectile company column-enforce-mode color-identifiers-mode clang-format avy-zap)))
+   '(noctilux-theme neotree undo-tree restclient general magit prettier-js modus-themes evil-collection evil sexy-monochrome-theme python-black smex ido-vertical-mode w3m company-arduino arduino-mode flycheck-grammarly org-inline-pdf org-preview-html flyspell-correct ivy-posframe which-key emacsql-mysql yaml-mode yaml multi-term ag yasnippet-snippets winum web-mode vterm use-package tide smart-tab slime rainbow-delimiters pug-mode prettier lsp-ui lsp-ivy js2-mode hl-todo highlight-numbers highlight-indentation highlight-indent-guides glsl-mode git-gutter+ fira-code-mode exwm exec-path-from-shell dotenv-mode desktop-environment counsel-projectile company column-enforce-mode color-identifiers-mode clang-format avy-zap)))
 
-(use-package modus-themes
-    :config
-    (load-theme 'modus-vivendi t))
-
-;; (use-package noctilux-theme
+;; (use-package modus-themes
 ;;     :config
-;;     (load-theme 'noctilux t))
+;;     (load-theme 'modus-vivendi t))
+
+(use-package noctilux-theme
+    :config
+    (load-theme 'noctilux t))
 
 ;; (set-frame-font "Monaco 16" nil t)
 ;; (set-frame-font "Victor Mono 15" nil t)
 ;; (set-frame-font "Monego Nerd Font Fix 15" nil t)
-(set-frame-font "Comic Mono 17" nil t)
+(set-frame-font "Comic Mono 18" nil t)
 
 
 (use-package js2-mode :ensure t)
@@ -71,6 +71,7 @@
 (use-package lsp-ui :ensure t)
 (use-package highlight-indent-guides :ensure t)
 (use-package highlight-indentation :ensure t)
+;; might remove this
 (use-package git-gutter+ :ensure t)
 (use-package yasnippet-snippets :ensure t)
 (use-package yasnippet :ensure t)
@@ -117,6 +118,7 @@
   :config
   (evil-set-undo-system 'undo-tree)
   (global-undo-tree-mode 1))
+(use-package neotree)
 
 
 ;; TODO: Check if needed
@@ -129,19 +131,22 @@
  ;; If there is more than one, they won't work right.
  '(column-enforce-face ((t (:inherit nil :foreground "gray30"))))
  '(cursor ((t (:background "green"))))
- '(mode-line ((t (:background "black" :foreground "white" :box (:line-width 1 :color "cyan") :height 1.0))))
- '(mode-line-buffer-id ((t (:background "black" :foreground "yellow1" :weight bold :height 1.0))))
- '(mode-line-inactive ((t (:background "black" :foreground "white" :box (:line-width 1 :color "dim gray") :weight light :height 1.0))))
+ ;; '(mode-line ((t (:background "black" :foreground "white" :box (:line-width 1 :color "cyan") :height 1.0))))
+ ;; '(mode-line-buffer-id ((t (:background "black" :foreground "yellow1" :weight bold :height 1.0))))
+ ;; '(mode-line-inactive ((t (:background "black" :foreground "white" :box (:line-width 1 :color "dim gray") :weight light :height 1.0))))
+ '(mode-line ((t (:background "#202020" :foreground "white" :box (:line-width 1 :color "#aadddd") :height 1.0))))
+ '(mode-line-buffer-id ((t (:background "#202020" :foreground "#aaeecc" :weight bold :height 1.0))))
+ '(mode-line-inactive ((t (:background "#202020" :foreground "white" :box (:line-width 1 :color "dim gray") :weight light :height 1.0))))
  '(rainbow-delimiters-base-face ((t (:inherit nil))))
- '(rainbow-delimiters-depth-1-face ((t (:inherit rainbow-delimiters-base-face :foreground "cyan"))))
- '(rainbow-delimiters-depth-2-face ((t (:inherit rainbow-delimiters-base-face :foreground "green"))))
- '(rainbow-delimiters-depth-3-face ((t (:inherit rainbow-delimiters-base-face :foreground "yellow"))))
- '(rainbow-delimiters-depth-4-face ((t (:inherit rainbow-delimiters-base-face :foreground "deep pink"))))
- '(rainbow-delimiters-depth-5-face ((t (:inherit rainbow-delimiters-base-face :foreground "RoyalBlue1"))))
- '(rainbow-delimiters-depth-6-face ((t (:inherit rainbow-delimiters-base-face :foreground "aquamarine"))))
- '(rainbow-delimiters-depth-7-face ((t (:inherit rainbow-delimiters-base-face :foreground "tomato"))))
- '(rainbow-delimiters-depth-8-face ((t (:inherit rainbow-delimiters-base-face :foreground "green yellow"))))
- '(rainbow-delimiters-depth-9-face ((t (:inherit rainbow-delimiters-base-face :foreground "white"))))
+ ;; '(rainbow-delimiters-depth-1-face ((t (:inherit rainbow-delimiters-base-face :foreground "cyan"))))
+ ;; '(rainbow-delimiters-depth-2-face ((t (:inherit rainbow-delimiters-base-face :foreground "green"))))
+ ;; '(rainbow-delimiters-depth-3-face ((t (:inherit rainbow-delimiters-base-face :foreground "yellow"))))
+ ;; '(rainbow-delimiters-depth-4-face ((t (:inherit rainbow-delimiters-base-face :foreground "deep pink"))))
+ ;; '(rainbow-delimiters-depth-5-face ((t (:inherit rainbow-delimiters-base-face :foreground "RoyalBlue1"))))
+ ;; '(rainbow-delimiters-depth-6-face ((t (:inherit rainbow-delimiters-base-face :foreground "aquamarine"))))
+ ;; '(rainbow-delimiters-depth-7-face ((t (:inherit rainbow-delimiters-base-face :foreground "tomato"))))
+ ;; '(rainbow-delimiters-depth-8-face ((t (:inherit rainbow-delimiters-base-face :foreground "green yellow"))))
+ ;; '(rainbow-delimiters-depth-9-face ((t (:inherit rainbow-delimiters-base-face :foreground "white"))))
  '(web-mode-current-element-highlight-face ((t (:background "#000000" :foreground "red" :weight bold))))
  '(winum-face ((t (:foreground "green" :weight bold))) t))
 
